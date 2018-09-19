@@ -52,7 +52,7 @@ int main() {
     lp = leap_year(y, c);
 
     //Checking whether the year is a leap year and if the date is valid
-    if(lp == 1) {
+    if (lp == 1) {
 
         printf("This year is a leap year.\n");
 
@@ -64,7 +64,7 @@ int main() {
 
     else {
 
-        if(d == 31 && m == 2) {
+        if (d == 31 && m == 2) {
 
             printf("The date is invalid because this isn't a leap year.\n");
         }
@@ -93,10 +93,10 @@ int weekday(int day, int month, int year, int century) {
     int wd;
 
     //Normalizing the input to be suitable for the formula
-    if(month == 1) {
+    if (month == 1) {
 
         month = 11;
-        if(year == 00) {
+        if (year == 00) {
 
             year = 99;
             century --;
@@ -108,10 +108,10 @@ int weekday(int day, int month, int year, int century) {
         }
     }
 
-    else if(month == 2) {
+    else if (month == 2) {
 
         month = 12;
-        if(year == 00) {
+        if (year == 00) {
 
             year = 99;
             century --;
@@ -131,11 +131,11 @@ int weekday(int day, int month, int year, int century) {
     //Aplying the formula
     aux1 = day + ((13*month - 1)/5) + year + (year/4) + (century/4) - 2*century;
 
-    if(aux1 < 0) {
+    if (aux1 < 0) {
 
         aux2 = aux1;
 
-        while(aux2 % 7 != 0) {
+        while (aux2%7 != 0) {
 
             aux2 --;
         }
@@ -156,11 +156,11 @@ int leap_year(int year, int century) {
 //Returns 1 if a year is a leap year and 0 if it isn't
 //Format (1-99,1-99)
     
-    if(year%4 == 0) {
+    if (year%4 == 0) {
 
-        if(year == 0) {
+        if (year == 0) {
 
-            if(century%4 == 0) {
+            if (century%4 == 0) {
 
                 return 1;
             }
